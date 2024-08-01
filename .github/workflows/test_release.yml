@@ -91,8 +91,8 @@ jobs:
           */.github/*
           */node_modules/*
           */output/*
-          */Common/build/*
-          */Common/docs/*
+          /*/Common/build/*
+          /*/Common/docs/*
           */Docs/*
           */Extras/*
           */Frontend/Docs/*
