@@ -83,28 +83,12 @@ jobs:
       uses: thedoctor0/zip-release@0.7.1
       with:
         directory: '.'
-        path: 'PixelStreamingInfrastructure-${{ github.ref_name }}-${{ steps.getversion.outputs.version }}'
+        path: >-
+          PixelStreamingInfrastructure-${{ github.ref_name }}-${{ steps.getversion.outputs.version }}/Common
+          PixelStreamingInfrastructure-${{ github.ref_name }}-${{ steps.getversion.outputs.version }}/Signalling
         type: 'zip'
         filename: '${{ github.ref_name }}-${{ steps.getversion.outputs.version }}.zip'
-        exclusions: >-
-          */.git/*
-          */.github/*
-          */node_modules/*
-          */output/*
-          /*/Common/build/*
-          /*/Common/docs/*
-          /*/Docs/*
-          /*/Extras/*
-          /*/Frontend/Docs/*
-          /*/Frontend/library/dist/*
-          /*/Frontend/library/types/*
-          /*/Frontend/ui-library/dist/*
-          /*/Frontend/ui-library/types/*
-          /*/SFU/Docs/*
-          /*/Signalling/build/*
-          /*/Signalling/docs/*
-          /*/SignallingWebServer/build/*
-          /*/SS_Test/*
+        exclusions: ''
 
     - name: "Make the release"
       uses: ncipollo/release-action@v1
